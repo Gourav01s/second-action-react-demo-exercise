@@ -2,7 +2,7 @@ name: Deployment Workflow exercise1
 on: [push, workflow_dispatch]
 jobs:
   lint:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Get code
         uses: actions/checkout@4
@@ -12,7 +12,7 @@ jobs:
         run: npm run lint
   test:
     needs: lint
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Get code
         uses: actions/checkout@4
@@ -22,7 +22,7 @@ jobs:
         run: npm run test
   deploy:
     needs: test
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Get code
         uses: actions/checkout@4

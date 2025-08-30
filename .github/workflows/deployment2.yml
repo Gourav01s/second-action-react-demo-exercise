@@ -3,7 +3,7 @@ on: [push, workflow_dispatch]
 jobs:
   deploy:
     needs: test
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Get code
         uses: actions/checkout@4
